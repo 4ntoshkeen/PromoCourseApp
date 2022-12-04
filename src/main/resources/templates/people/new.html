@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>New person</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/people}" th:object="${person}">
+
+  <label for="operationDate">Date: </label>
+  <input type="text" th:field="*{operationDate}" id="operationDate"/>
+
+  <br/>
+  <br/>
+
+  <label for="cito">Cito: </label>
+  <input type="text" th:field="*{cito}" id="cito"/>
+
+  <br/>
+  <br/>
+
+  <label for="timeStart">Start Time: </label>
+  <input type="text" th:field="*{timeStart}" id="timeStart"/>
+
+  <br/>
+  <br/>
+
+  <label for="timeFinish">Finish Time: </label>
+  <input type="text" th:field="*{timeFinish}" id="timeFinish"/>
+
+  <br/>
+  <br/>
+
+  <label for="name">Name: </label>
+  <input type="text" th:field="*{name}" id="name"/>
+  <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</div>
+
+  <br/>
+  <br/>
+
+  <label for="region">Region: </label>
+  <input type="text" th:field="*{region}" id="region"/>
+
+  <br/>
+  <br/>
+
+  <label for="birthday">Birthday: </label>
+  <input type="text" th:field="*{birthday}" id="birthday"/>
+
+  <br/>
+  <br/>
+
+  <label for="department">Department: </label>
+  <input type="text" th:field="*{department}" id="department"/>
+
+  <br/>
+  <br/>
+
+  <label for="historyNumber">History Number: </label>
+  <input type="text" th:field="*{historyNumber}" id="historyNumber"/>
+
+  <br/>
+  <br/>
+
+  <label for="timeDose">Dose Time: </label>
+  <input type="text" th:field="*{timeDose}" id="timeDose"/>
+
+  <br/>
+  <br/>
+
+  <label for="dose">Dose: </label>
+  <input type="text" th:field="*{dose}" id="dose"/>
+  <div style="color:red" th:if="${#fields.hasErrors('dose')}" th:errors="*{dose}">Dose error</div>
+
+  <br/>
+  <br/>
+
+  <label for="stents">Stents: </label>
+  <input type="text" th:field="*{stents}" id="stents"/>
+  <div style="color:red" th:if="${#fields.hasErrors('stents')}" th:errors="*{stents}">Stents error</div>
+
+  <br/>
+  <br/>
+
+  <label for="elevation">Elevation: </label>
+  <input type="text" th:field="*{elevation}" id="elevation"/>
+
+  <br/>
+  <hr/>
+
+  <input type="submit" value="Go!"/>
+</form>
+
+</body>
+</html>

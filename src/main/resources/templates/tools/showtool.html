@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show</title>
+</head>
+<body>
+
+<h2>TOOL LIST</h2>
+
+<br/>
+
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Size</th>
+        <th>Quantity</th>
+    </tr>
+    <tr th:each="tool : ${tools}">
+
+        <td th:text="${tool.getType()}">type</td>
+        <td th:text="${tool.getName()}">name</td>
+        <td th:text="${tool.getSize()}">size</td>
+        <td th:text="${tool.getQuantity()}">quantity</td>
+    </tr>
+</table>
+<hr/>
+<br/>
+<a th:href="@{/tools/{id}/newtool(id=${personsid})}">ADD</a>
+
+</body>
+</html>

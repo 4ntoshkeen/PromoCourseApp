@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>New tool</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/operations}" th:object="${operation}">
+
+  <label for="owner">Owner (table 'person' id): </label>
+  <input type="text" th:field="*{owner.id}" id="owner"/>
+
+  <br/>
+  <br/>
+
+  <label for="type">Type: </label>
+  <input type="text" th:field="*{type}" id="type"/>
+
+  <br/>
+  <br/>
+
+  <label for="name">Name: </label>
+  <input type="text" th:field="*{name}" id="name"/>
+
+  <br/>
+  <br/>
+
+  <label for="code">OperationCode: </label>
+  <input type="text" th:field="*{operationCode}" id="code"/>
+
+  <br/>
+  <br/>
+
+  <label for="protocol">Protocol: </label>
+  <input type="text" th:field="*{protocol}" id="protocol"/>
+
+  <br/>
+  <hr/>
+
+  <input type="submit" value="Go!"/>
+</form>
+
+</body>
+</html>
+
+<!--
+  <label for="name">Name: </label>
+  <input type="text" th:field="*{name}" id="name"/>
+  <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</div>
+-->

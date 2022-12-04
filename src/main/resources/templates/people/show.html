@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show</title>
+</head>
+<body>
+
+
+
+<br/>
+
+<h2>PATIENT INFO </h2>
+
+<p th:text="${person.getOperationDate()}">NAME</p>
+<p th:text="${person.getCito()}">NAME</p>
+<p th:text="${person.getTimeStart()}">NAME</p>
+<p th:text="${person.getTimeFinish()}">NAME</p>
+<p th:text="${person.getName()}">NAME</p>
+<p th:text="${person.getRegion()}">NAME</p>
+<p th:text="${person.getBirthday()}">NAME</p>
+<p th:text="${person.getDepartment()}">NAME</p>
+<p th:text="${person.getHistoryNumber()}">NAME</p>
+<p th:text="${person.getTimeDose()}">NAME</p>
+<p th:text="${person.getDose()}">NAME</p>
+<p th:text="${person.getStents()}">NAME</p>
+<p th:text="${person.getElevation()}">NAME</p>
+
+<hr/>
+
+
+<a th:href="@{/people/{id}/edit(id=${person.getId()})}">EDIT PATIENT</a>
+
+<hr/>
+
+<h2>TOOL LIST</h2>
+
+<br/>
+
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Size</th>
+        <th>Quantity</th>
+    </tr>
+    <tr th:each="tool : ${tools}">
+        <td th:text="${tool.getType()}">type</td>
+        <td th:text="${tool.getName()}">name</td>
+        <td th:text="${tool.getSize()}">size</td>
+        <td th:text="${tool.getQuantity()}">quantity</td>
+    </tr>
+</table>
+
+<hr/>
+
+<a th:href="@{/tools/newtool}">ADD NEW TOOL</a>
+
+<hr/>
+
+<h2>OPERATION LIST </h2>
+
+<br/>
+
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>OperationCode</th>
+        <th>Protocol</th>
+    </tr>
+    <tr th:each="operation : ${operations}">
+        <td th:text="${operation.getType()}">type</td>
+        <td th:text="${operation.getName()}">name</td>
+        <td th:text="${operation.getOperationCode()}">code</td>
+        <td th:text="${operation.getProtocol()}">protocol</td>
+    </tr>
+</table>
+
+<hr/>
+
+<a th:href="@{/operations/newoperation}">ADD NEW OPERATION</a>
+<hr/>
+</body>
+</html>

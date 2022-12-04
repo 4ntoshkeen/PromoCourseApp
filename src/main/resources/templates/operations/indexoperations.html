@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>All patients</title>
+</head>
+<body>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Owner</th>
+    <th>Type</th>
+    <th>Name</th>
+    <th>OperationCode</th>
+    <th>Protocol</th>
+
+  </tr>
+  <tr th:each="operation : ${operations}">
+    <td th:text="${operation.getId()}">ID</td>
+    <td th:text="${operation.getOwner().getId()}">Owner</td>
+    <td th:text="${operation.getType()}">Type</td>
+    <td th:text="${operation.getName()}">Name</td>
+    <td th:text="${operation.getOperationCode()}">Operation code</td>
+    <td th:text="${operation.getProtocol()}">Protocol</td>
+<!--
+    <td><a th:href="@{/operations/{id}(id=${operation.getId()})}" th:text="SHOW">operation</a></td>
+-->
+  </tr>
+</table>
+
+<br/>
+<hr/>
+
+<a href="/operations/newoperation">Create new operation</a>
+
+</body>
+</html>

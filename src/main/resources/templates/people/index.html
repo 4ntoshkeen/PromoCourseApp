@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>All patients</title>
+</head>
+<body>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Date</th>
+    <th>Cito</th>
+    <th>Start</th>
+    <th>Finish</th>
+    <th>Name</th>
+    <th>Region</th>
+    <th>Birthday</th>
+    <th>Department</th>
+    <th>History number</th>
+    <th>DoseTime</th>
+    <th>Dose</th>
+    <th>Stents</th>
+    <th>Elevation</th>
+    <th></th>
+  </tr>
+  <tr th:each="person : ${people}">
+    <td th:text="${person.getId()}">ID</td>
+    <td th:text="${person.getOperationDate()}">Date</td>
+    <td th:text="${person.getCito()}">Cito</td>
+    <td th:text="${person.getTimeStart()}">Start</td>
+    <td th:text="${person.getTimeFinish()}">Finish</td>
+    <td th:text="${person.getName()}">Name</td>
+    <td th:text="${person.getRegion()}">Region</td>
+    <td th:text="${person.getBirthday()}">Birthday</td>
+    <td th:text="${person.getDepartment()}">Department</td>
+    <td th:text="${person.getHistoryNumber()}">HISTORY NUMBER</td>
+    <td th:text="${person.getTimeDose()}">Dose Time</td>
+    <td th:text="${person.getDose()}">Dose</td>
+    <td th:text="${person.getStents()}">Stents</td>
+    <td th:text="${person.getElevation()}">Elevation</td>
+    <td><a th:href="@{/people/{id}(id=${person.getId()})}" th:text="SHOW">person</a></td>
+  </tr>
+</table>
+
+<br/>
+<hr/>
+
+<a href="/people/new">Create new person</a>
+
+</body>
+</html>

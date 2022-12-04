@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update operations</title>
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/people/{id}(id=${person.getId()})}" th:object="${person}">
+    <label for="operationDate">Date: </label>
+    <input type="text" th:field="*{operationDate}" id="operationDate"/>
+    <br/>
+
+    <label for="cito">Cito: </label>
+    <input type="text" th:field="*{cito}" id="cito"/>
+    <br/>
+
+    <label for="timeStart">Start Time: </label>
+    <input type="text" th:field="*{timeStart}" id="timeStart"/>
+    <br/>
+
+    <label for="timeFinish">Finish Time: </label>
+    <input type="text" th:field="*{timeFinish}" id="timeFinish"/>
+    <br/>
+
+    <label for="name">Name: </label>
+    <input type="text" th:field="*{name}" id="name"/>
+    <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</div>
+    <br/>
+
+    <label for="region">Region: </label>
+    <input type="text" th:field="*{region}" id="region"/>
+    <br/>
+
+    <label for="birthday">Birthday: </label>
+    <input type="text" th:field="*{birthday}" id="birthday"/>
+    <br/>
+
+    <label for="department">Department: </label>
+    <input type="text" th:field="*{department}" id="department"/>
+    <br/>
+
+    <label for="historyNumber">History Number: </label>
+    <input type="text" th:field="*{historyNumber}" id="historyNumber"/>
+    <br/>
+
+    <label for="timeDose">Dose Time: </label>
+    <input type="text" th:field="*{timeDose}" id="timeDose"/>
+    <br/>
+
+    <label for="dose">Dose: </label>
+    <input type="text" th:field="*{dose}" id="dose"/>
+    <div style="color:red" th:if="${#fields.hasErrors('dose')}" th:errors="*{dose}">Dose error</div>
+    <br/>
+
+    <label for="stents">Stents: </label>
+    <input type="text" th:field="*{stents}" id="stents"/>
+    <div style="color:red" th:if="${#fields.hasErrors('stents')}" th:errors="*{stents}">Stents error</div>
+    <br/>
+
+    <label for="elevation">Elevation: </label>
+    <input type="text" th:field="*{elevation}" id="elevation"/>
+    <br/>
+
+    <input type="submit" value="Update"/>
+
+</form>
+<form th:method="DELETE" th:action="@{/people/{id}(id=${person.getId()})}">
+    <input type="submit" value="Delete"/>
+</form>
+
+</body>
+</html>
