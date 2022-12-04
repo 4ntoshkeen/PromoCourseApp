@@ -18,12 +18,10 @@ public class Tool {
     String name;
 
     @Column(name = "type")
-    @Enumerated(EnumType.STRING)
-    Type type;
+    String type;
 
     @Column(name = "size")
-    @Enumerated(EnumType.STRING)
-    Size size;
+    String size;
 
     @Column(name = "quantity")
     int quantity;
@@ -40,7 +38,7 @@ public class Tool {
                 '}';
     }
 
-    public Tool(String name, Type type, Size size, int quantity, Person owner) {
+    public Tool(String name, String type, String size, int quantity, Person owner) {
         this.name = name;
         this.type = type;
         this.size = size;
@@ -68,19 +66,19 @@ public class Tool {
         this.name = name;
     }
 
-    public Type getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(Type type) {
+    public void setType(String type) {
         this.type = type;
     }
 
-    public Size getSize() {
+    public String getSize() {
         return size;
     }
 
-    public void setSize(Size size) {
+    public void setSize(String size) {
         this.size = size;
     }
 
